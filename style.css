@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+ul{
+    list-style: none;
+}
+body{
+    background-image: url(./img/BG.jpg);
+    background-position: top center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-color: #121214;
+}
+body *{
+    font-family: 'Inter', sans-serif;
+    line-height: 160%;
+}
+header{
+    margin-top: 32px;
+    height: calc(120px + 32px);
+}
+header div{
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg,  #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    border-radius: 50%;
+    display: flex;
+    padding: 4px;
+    transition: transform .5s;
+}
+header div:hover{
+    transform: scale(1.1);
+}
+header div img{
+    width: 100%;
+    border-radius: 50%;
+}
+main{
+    max-width: 580px;
+    width: 90%;
+    margin: 32px auto;
+    /*Podemos fazer
+    display: flex;
+    flex-direction: column;
+    */
+    /*OU*/
+    display: grid;
+    gap: 24px;
+
+    
+}
+section{
+    color: white;
+    background-image: linear-gradient(90deg,  #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top:4px;
+    border-radius: 10px;
+}
+section div{
+    background-color: #2A2634;
+    padding:32px;
+    padding-top: 24px;
+    border-radius: 8px;
+}
+section h2{
+    letter-spacing: -0.47px;
+}
+section p{
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+section ul{
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+section ul li{
+    transition: transform .3s;
+}
+section ul li:hover{
+ transform: scale(1.3);
+}
+.channel-list img{
+    width: 70px;
+    border-radius: 50%;
+    border: 1px solid #443E54;
+}
+.game-list img{
+    width: 90px;
+    border-radius: 8px;
+}
+
+/*------ANIMATION--------*/
+
+
+header div{
+    animation: vimDeCima .7s .2s backwards;
+}
+
+@keyframes vimDeCima{
+    from{
+        opacity: 0;
+        transform: translateY(-30px)
+    }   
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    } 
+}
+/*CRIAR MAIS ANIMATION  PARA OS CARDS*/
+
+main section{
+    animation: fromButtom .7s backwards;
+}
+
+@keyframes  fromButtom{
+    from{
+        opacity: 0;
+        transform: translateX(60px)
+    }   
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    } 
+}
+
+/*main pega o section nth=numeração do child(1) filho 1 do pai main*/
+main section:nth-child(1){ 
+    animation-delay: 0;
+}
+main section:nth-child(2){ 
+    animation-delay: .4s;
+}
+main section:nth-child(3){ 
+    animation-delay: .8s;
+}
+
+
